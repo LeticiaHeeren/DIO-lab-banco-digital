@@ -1,14 +1,18 @@
-
 public class ContaCorrente extends Conta {
+    private static final double TAXA_SAQUE = 2.50;
 
-	public ContaCorrente(Cliente cliente) {
-		super(cliente);
-	}
+    public ContaCorrente(Cliente cliente) {
+        super(cliente);
+    }
 
-	@Override
-	public void imprimirExtrato() {
-		System.out.println("=== Extrato Conta Corrente ===");
-		super.imprimirInfosComuns();
-	}
-	
+    @Override
+    public void sacar(double valor) {
+        super.sacar(valor + TAXA_SAQUE);
+    }
+
+    @Override
+    public void imprimirExtrato() {
+        System.out.println("=== Extrato Conta Corrente ===");
+        super.imprimirInfosComuns();
+    }
 }
